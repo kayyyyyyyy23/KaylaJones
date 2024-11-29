@@ -1,0 +1,18 @@
+% Parameters
+R = 2000;         % Resistance in Ohms
+C = 2e-7;         % Capacitance in Farads
+L = 1.5;          % Inductance in Henrys
+
+% System matrix
+A = [0, 1;-1/(L*C), -R/L];
+
+% Calculate eigenvalues and eigenvectors
+[V, D] = eig(A);
+
+
+
+disp('Eigenvalues:');
+disp(diag(D));    % Diagonal elements of D are the eigenvalues
+
+disp('Eigenvectors:');
+disp(V);          % Columns of V are the eigenvectors
